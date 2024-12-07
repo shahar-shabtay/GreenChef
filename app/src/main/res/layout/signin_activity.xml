@@ -1,0 +1,125 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    android:padding="16dp">
+
+    <!-- Logo -->
+    <ImageView
+        android:id="@+id/logoImageView"
+        android:layout_width="280dp"
+        android:layout_height="225dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
+        android:contentDescription="@string/logo_description"
+        android:src="@drawable/sub_logo" />
+
+    <!-- Form Container -->
+    <LinearLayout
+        android:id="@+id/formContainer"
+        android:layout_width="345dp"
+        android:layout_height="370dp"
+        android:layout_below="@id/logoImageView"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="21dp"
+        android:background="@drawable/form_outline"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- Tabs -->
+        <LinearLayout
+            android:id="@+id/tabsContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingBottom="8dp">
+
+            <!-- Sign In Tab -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:gravity="center">
+
+                <Button
+                    android:id="@+id/btnTabSignIn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="@string/sign_in"
+                    android:background="@android:color/transparent"
+                    android:textColor="@color/green"
+                    android:textSize="16sp" />
+
+                <!-- Underline for Sign In -->
+                <View
+                    android:id="@+id/underlineLogin"
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:background="@color/green" />
+            </LinearLayout>
+
+            <!-- Sign Up Tab -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:gravity="center">
+
+                <Button
+                    android:id="@+id/btnTabSignUp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="@string/sign_up"
+                    android:background="@android:color/transparent"
+                    android:textColor="@color/black"
+                    android:textSize="16sp" />
+
+                <!-- Underline for Sign Up -->
+                <View
+                    android:id="@+id/underlineSignup"
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:background="@android:color/transparent" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Username Field -->
+        <EditText
+            android:id="@+id/etUsername"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="60dp"
+            android:background="@drawable/rounded_input_background"
+            android:hint="@string/username"
+            android:inputType="text"
+            android:padding="12dp" />
+
+        <!-- Password Field -->
+        <EditText
+            android:id="@+id/etPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/rounded_input_background"
+            android:hint="@string/password"
+            android:inputType="textPassword"
+            android:padding="12dp" />
+    </LinearLayout>
+
+    <!-- Sign Up Button -->
+    <Button
+        android:id="@+id/btnSignUp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/sign_in"
+        android:backgroundTint="@color/green"
+        android:textColor="@color/white"
+        android:padding="12dp"
+        android:layout_below="@id/formContainer"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="-25dp" />
+</RelativeLayout>

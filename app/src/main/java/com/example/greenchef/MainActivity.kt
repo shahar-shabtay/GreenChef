@@ -1,6 +1,9 @@
 package com.example.greenchef
 
+import android.content.Intent
 import android.os.Bundle
+import android.util.Log
+import android.widget.Button
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -9,12 +12,24 @@ import androidx.core.view.WindowInsetsCompat
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
-        setContentView(R.layout.activity_main)
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
-            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-            insets
+        setContentView(R.layout.welcome_activity)
+
+
+            // Find buttons by ID
+            val btnSignIn = findViewById<Button>(R.id.btnSignIn)
+            val btnSignUp = findViewById<Button>(R.id.btnSignUp)
+
+            // Set click listeners
+            btnSignIn.setOnClickListener {
+                Log.d("WelcomeActivity", "Sign In button clicked") // Debug message
+                val loginIntent = Intent(this, SignInActivity::class.java)
+                startActivity(loginIntent)
+            }
+
+            btnSignUp.setOnClickListener {
+                Log.d("WelcomeActivity", "Sign Up button clicked") // Debug message
+                val signupIntent = Intent(this, SignUpActivity::class.java)
+                startActivity(signupIntent)
+            }
         }
     }
-}

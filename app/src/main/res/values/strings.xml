@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">GreenChef</string>
+    <string name="logo_description">GreenChefLogo</string>
+    <string name="sign_in">SignIn</string>
+    <string name="sign_up">SignUp</string>
+    <string name="password">Password</string>
+    <string name="username">Username</string>
+    <string name="email">Email</string>
 </resources>
