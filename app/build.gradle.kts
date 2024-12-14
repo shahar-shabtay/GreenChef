@@ -1,6 +1,7 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
+    id("kotlin-kapt") // Make sure this plugin is included
 }
 
 android {
@@ -36,13 +37,28 @@ android {
 }
 
 dependencies {
+    // Room dependencies
+    implementation(libs.androidx.room.runtime) // Room runtime
+    kapt(libs.androidx.room.compiler)         // Room annotation processor
+    implementation(libs.androidx.room.ktx)    // Room KTX for coroutines
 
+    // Other dependencies
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
+
+    // Testing dependencies
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+}
+
+// Kapt configuration for Room
+kapt {
+    arguments {
+        arg("room.schemaLocation", projectDir.resolve("schemas").absolutePath) // Correct Kotlin DSL syntax
+        arg("room.incremental", "true")
+    }
 }

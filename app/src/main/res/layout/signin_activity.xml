@@ -112,14 +112,25 @@
 
     <!-- Sign Up Button -->
     <Button
-        android:id="@+id/btnSignUp"
+        android:id="@+id/btnSignIn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/sign_in"
+        android:text="@string/sign_up"
         android:backgroundTint="@color/green"
         android:textColor="@color/white"
         android:padding="12dp"
         android:layout_below="@id/formContainer"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="-25dp" />
+
+    <!-- Back Arrow -->
+    <ImageView
+        android:id="@+id/btnBackArrow"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="5dp"
+        android:contentDescription="@string/back_to_welcome"
+        android:src="@drawable/back" />
 </RelativeLayout>

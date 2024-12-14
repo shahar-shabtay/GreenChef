@@ -21,12 +21,16 @@ class WelcomeActivity : AppCompatActivity() {
             Log.d("WelcomeActivity", "Sign In button clicked") // Debug message
             val loginIntent = Intent(this, SignInActivity::class.java)
             startActivity(loginIntent)
+
+            overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left)
         }
 
         btnSignUp.setOnClickListener {
             Log.d("WelcomeActivity", "Sign Up button clicked") // Debug message
             val signupIntent = Intent(this, SignUpActivity::class.java)
             startActivity(signupIntent)
+
+            overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left)
         }
     }
 }
